@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.21;
 
 import "zeppelin-solidity/contracts/ownership/Ownable.sol";
 
@@ -27,7 +27,7 @@ contract OwnedByContract is Ownable{
     function setMinterContract(address newOwner) public onlyOwner {
         require(newOwner != address(0));
         require(isContract(newOwner));
-        OwnershipTransferred(ownerContract, newOwner);
+        emit OwnershipTransferred(ownerContract, newOwner);
         ownerContract = newOwner;
     }
 
