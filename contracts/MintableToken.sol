@@ -6,10 +6,8 @@ import "./OwnedByContract.sol";
 
 
 /**
- * @title Mintable token
- * @dev Simple ERC20 Token example, with mintable token creation
- * @dev Issue: * https://github.com/OpenZeppelin/zeppelin-solidity/issues/120
- * Based on code by TokenMarketNet: https://github.com/TokenMarketNet/ico/blob/master/contracts/MintableToken.sol
+ * @title Mintable by another contract.
+ * Minting is only allowed to another contract. 
  */
 contract MintableToken is StandardToken, OwnedByContract {
     event Mint(address indexed to, uint256 amount);
